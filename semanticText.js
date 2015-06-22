@@ -4,46 +4,33 @@
             var types     = 0,
                 valueTest = (typeof typeValue === "string") ? typeValue.toUpperCase() : "",
                 root      = this;
-            switch (typeValue) {
-            case "ALL":
+            typeValue = typeValue.toLowerCase();
+            if (typeValue === "all") {
                 types = 0;
-                break;
-            case "ELEMENT_NODE":
+            } else if (typeValue === "element_node") {
                 types = 1;
-                break;
-            case "ATTRIBUTE_NODE":
+            } else if (typeValue === "attribute_node") {
                 types = 2;
-                break;
-            case "TEXT_NODE":
+            } else if (typeValue === "text_node") {
                 types = 3;
-                break;
-            case "CDATA_SECTION_NODE":
+            } else if (typeValue === "cdata_section_node") {
                 types = 4;
-                break;
-            case "ENTITY_REFERENCE_NODE":
+            } else if (typeValue === "entity_reference_node") {
                 types = 5;
-                break;
-            case "ENTITY_NODE":
+            } else if (typeValue === "entity_node") {
                 types = 6;
-                break;
-            case "PROCESSING_INSTRUCTION_NODE":
+            } else if (typeValue === "processing_instruction_node") {
                 types = 7;
-                break;
-            case "COMMENT_NODE":
+            } else if (typeValue === "comment_node") {
                 types = 8;
-                break;
-            case "DOCUMENT_NODE":
+            } else if (typeValue === "document_node") {
                 types = 9;
-                break;
-            case "DOCUMENT_TYPE_NODE":
+            } else if (typeValue === "document_type_node") {
                 types = 10;
-                break;
-            case "DOCUMENT_FRAGMENT_NODE":
+            } else if (typeValue === "document_fragment_node") {
                 types = 11;
-                break;
-            case "NOTATION_NODE":
+            } else if (typeValue === "notation_node") {
                 types = 12;
-                break;
             }
             if (isNaN(valueTest) === false && (valueTest.length === 1 || valueTest === "10" || valueTest === "11" || valueTest === "12")) {
                 types = Number(valueTest);
