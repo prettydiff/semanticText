@@ -19,6 +19,11 @@ evaluated.
 * A second list provides text content that is well described by an inline element but poorly described there after.
 * A third list provides all text content in the order in which it occurs in the DOM so that text can read according to its order in the code.
 
+Dependency
+---
+
+This tool uses and indluces [getNodesByType](https://github.com/prettydiff/getNodesByType) to walk the DOM
+
 License
 ---
 
