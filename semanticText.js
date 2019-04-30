@@ -1,4 +1,4 @@
-const textParent = function () {
+var textParent = function () {
     "use strict";
     const text = (function () {
             const textoutput = [],
