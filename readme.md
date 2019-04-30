@@ -22,7 +22,7 @@ evaluated.
 Dependency
 ---
 
-This tool uses and indluces [getNodesByType](https://github.com/prettydiff/getNodesByType) to walk the DOM
+This tool uses and includes [getNodesByType](https://github.com/prettydiff/getNodesByType) to walk the DOM
 
 License
 ---
