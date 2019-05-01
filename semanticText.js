@@ -77,13 +77,14 @@ var textParent = function () {
                     if (boxTop < 10) {
                         box.style.top = "1em";
                     } else if (boxTop > (max - 40)) {
-                        box.style.top = `${(max / 10) - 4}em`;
+                        box.style.top = ((max / 10) - 4) + "em";
                     } else {
-                        box.style.top = `${boxTop / 10}em`;
+                        box.style.top = (boxTop / 10) + "em";
                     }
                     if (boxLeft < ((headingWidth * -1) + 40)) {
-                        box.style.left = `${((headingWidth * -1) + 40) / 10}em`;
+                        box.style.left = (((headingWidth * -1) + 40) / 10) + "em";
                     }
+                    box.style.boxShadow = "0 1em 5em";
                     body.style.opacity = "1";
                     e.preventDefault();
                     return false;
@@ -91,16 +92,16 @@ var textParent = function () {
                 boxmoveTouch = function dom_event_grab_boxmoveTouch(f) {
                     f.preventDefault();
                     box.style.right = "auto";
-                    box.style.left = `${(boxLeft + (f.touches[0].clientX - touchX)) / 10}em`;
-                    box.style.top = `${(boxTop + (f.touches[0].clientY - touchY)) / 10}em`;
+                    box.style.left = ((boxLeft + (f.touches[0].clientX - touchX)) / 10) + "em";
+                    box.style.top = ((boxTop + (f.touches[0].clientY - touchY)) / 10) + "em";
                     document.ontouchend = drop;
                     return false;
                 },
                 boxmoveClick = function dom_event_grab_boxmoveClick(f) {
                     f.preventDefault();
                     box.style.right = "auto";
-                    box.style.left = `${(boxLeft + (f.clientX - mouseX)) / 10}em`;
-                    box.style.top = `${(boxTop + (f.clientY - mouseY)) / 10}em`;
+                    box.style.left = ((boxLeft + (f.clientX - mouseX)) / 10) + "em";
+                    box.style.top = ((boxTop + (f.clientY - mouseY)) / 10) + "em";
                     document.onmouseup = drop;
                     return false;
                 };
