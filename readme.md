@@ -11,8 +11,8 @@ What it does
 ---
 
 Finds all text nodes that are not purely white space and evaluates them against
-their parent node's node name. In the case where a parent node is a span the
-span's parent node is evaluated. If that node is a span it's parent node is
+their parent node's node name. In the case where a parent node is a span, the
+span's parent node is evaluated. If that node is a span, its parent node is
 evaluated.
 
 * A first list provides text content that is poorly described by its HTML parent node.
