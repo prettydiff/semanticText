@@ -1,7 +1,7 @@
 var textParent = function () {
     "use strict";
     const text = (function () {
-            const textoutput = [],
+            const textOutput = [],
                 child  = function (x) {
                     const aa    = x.childNodes,
                         bb    = aa.length;
@@ -9,7 +9,7 @@ var textParent = function () {
                     if (bb > 0) {
                         do {
                             if (aa[c].nodeType === 3) {
-                                textoutput.push(aa[c]);
+                                textOutput.push(aa[c]);
                             }
                             if (aa[c].nodeType === 1) {
                                 child(aa[c]);
@@ -19,21 +19,21 @@ var textParent = function () {
                     }
                 };
             child(document.documentElement);
-            return textoutput;
+            return textOutput;
         }()),
         parents = [],
         bad = [],
         inline = [],
         badness = function (x) {
             const bads = ["div", "body", "span", "noscript", "i", "b", "u", "font", "center", "small", "big", "blink", "strike", "tt"],
-                badlen = bads.length;
+                badLen = bads.length;
             let y = 0;
             do {
                 if (x === bads[y]) {
                     return true;
                 }
                 y = y + 1;
-            } while (y < badlen);
+            } while (y < badLen);
             return false;
         },
         button = function () {
@@ -89,7 +89,7 @@ var textParent = function () {
                     e.preventDefault();
                     return false;
                 },
-                boxmoveTouch = function dom_event_grab_boxmoveTouch(f) {
+                boxMoveTouch = function dom_event_grab_boxMoveTouch(f) {
                     f.preventDefault();
                     box.style.right = "auto";
                     box.style.left = ((boxLeft + (f.touches[0].clientX - touchX)) / 10) + "em";
@@ -97,7 +97,7 @@ var textParent = function () {
                     document.ontouchend = drop;
                     return false;
                 },
-                boxmoveClick = function dom_event_grab_boxmoveClick(f) {
+                boxMoveClick = function dom_event_grab_boxMoveClick(f) {
                     f.preventDefault();
                     box.style.right = "auto";
                     box.style.left = ((boxLeft + (f.clientX - mouseX)) / 10) + "em";
@@ -111,10 +111,10 @@ var textParent = function () {
             body.style.opacity = ".5";
             box.style.height = ".1em";
             if (touch === true) {
-                document.ontouchmove = boxmoveTouch;
+                document.ontouchmove = boxMoveTouch;
                 document.ontouchstart = null;
             } else {
-                document.onmousemove = boxmoveClick;
+                document.onmousemove = boxMoveClick;
                 document.onmousedown = null;
             }
             return false;
@@ -163,7 +163,7 @@ var textParent = function () {
             a = a + 1;
         } while (a < b);
     }
-    output.push("#textAnalysis{background:#ddd;box-shadow:0 1em 5em;display:block;font-size:10px;position:absolute;left:5em;top:5em;z-index:100000}");
+    output.push("#textAnalysis{background:#ddd;box-shadow:0 1em 5em;color:#333;display:block;font-size:10px;position:absolute;left:5em;top:5em;z-index:100000}");
     output.push("#textAnalysis .textAnalysis-body{background:#ddd;border:0.1em solid #000;display:block;height:80em;overflow:scroll;margin:0;padding:2em 2em 0;width:80em}");
     output.push("#textAnalysis ol{}");
     output.push("#textAnalysis li, #textAnalysis p{font-size:1.4em;margin:0 0 1em;padding:0}");
